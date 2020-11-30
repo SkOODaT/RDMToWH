@@ -24,7 +24,7 @@ def homepage():
     return "Python RDMToWH Connector V1.1"
 
 @app.route("/", methods=["POST"])
-def raw():
+def webhook():
     data = request.get_json(force=True)
     print("[RDMToWH] WEBHOOK DATA RECEVED")
     #pprint.pprint(data)
