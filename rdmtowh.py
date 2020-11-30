@@ -10,11 +10,14 @@ import logging
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
-WEBHOOK_URL_1 = "192.168.1.100:4000"
+WEBHOOK_URL_1 = "0.0.0.0:4000"
 WEBHOOK_URL_2 = None
 WEBHOOK_URL_3 = None
 WEBHOOK_URL_4 = None
 WEBHOOK_URL_5 = None
+
+CONNECTOR_IP = "0.0.0.0"
+CONNECTOR_PORT = 6060
 
 @app.route('/')
 def homepage():
@@ -57,4 +60,4 @@ def raw():
 
 if __name__ == "__main__":
     print('[RDMToWH] Python RDMToWH Connector V1.1')
-    app.run(host="192.168.1.100", port=6060, debug=True)
+    app.run(host=CONNECTOR_IP, port=CONNECTOR_PORT, debug=True)
